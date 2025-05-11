@@ -1,0 +1,244 @@
+:root {
+    --primary-color: #1a237e;
+    --accent-color: #303f9f;
+    --text-color: #333;
+    --bg-color: #f5f6fa;
+    --shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    --hover-color: #e8eaf6;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    line-height: 1.6;
+    color: var(--text-color);
+    background: var(--bg-color);
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 2rem;
+}
+
+header {
+    background: linear-gradient(135deg, #1a237e, #303f9f, #3f51b5, #7986cb);
+    background-size: 300% 300%;
+    color: white;
+    padding: 3rem 0;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+    animation: gradientAnimation 8s ease infinite;
+}
+
+@keyframes gradientAnimation {
+    0% {
+        background-position: 0% 50%;
+    }
+    50% {
+        background-position: 100% 50%;
+    }
+    100% {
+        background-position: 0% 50%;
+    }
+}
+
+.profile-image {
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
+    margin: 0 auto 1rem auto;
+    border: 4px solid white;
+    box-shadow: var(--shadow);
+    object-fit: cover;
+}
+
+.section {
+    margin: 3rem 0;
+}
+
+.section h2 {
+    margin-bottom: 1.5rem;
+    font-size: 1.8rem;
+    color: var(--primary-color);
+    position: relative;
+    display: inline-block;
+}
+
+.section h2::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: -5px;
+    width: 100%;
+    height: 2px;
+    background: linear-gradient(90deg, var(--primary-color), transparent);
+}
+
+.education-item,
+.experience-item,
+.project-item,
+.certification-item {
+    background: white;
+    padding: 1.8rem;
+    margin: 1.5rem 0;
+    border-radius: 8px;
+    box-shadow: var(--shadow);
+    transition: all 0.3s ease;
+    cursor: pointer;
+    position: relative;
+    overflow: hidden;
+}
+
+.education-item:hover,
+.experience-item:hover,
+.project-item:hover,
+.certification-item:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.2);
+    background: var(--hover-color);
+}
+
+.education-item::after,
+.experience-item::after,
+.project-item::after,
+.certification-item::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    height: 3px;
+    width: 0;
+    background: linear-gradient(90deg, var(--primary-color), var(--accent-color));
+    transition: width 0.3s ease;
+}
+
+.education-item:hover::after,
+.experience-item:hover::after,
+.project-item:hover::after,
+.certification-item:hover::after {
+    width: 100%;
+}
+
+.education-item h3,
+.experience-item h3,
+.project-item h3,
+.certification-item h3 {
+    margin-bottom: 0.5rem;
+    color: var(--primary-color);
+}
+
+.education-item p,
+.experience-item p,
+.project-item p,
+.certification-item p {
+    color: var(--text-color);
+    opacity: 0.9;
+}
+
+.profile-section {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 2rem;
+    margin-top: 2rem;
+}
+
+.contact-info,
+.profile-text {
+    background: white;
+    padding: 2rem;
+    border-radius: 8px;
+    box-shadow: var(--shadow);
+}
+
+.phone-link, 
+.email-link {
+    color: var(--accent-color);
+    transition: color 0.2s ease;
+}
+
+.phone-link:hover, 
+.email-link:hover {
+    color: var(--primary-color);
+    text-decoration: underline;
+}
+
+.link-comercio,
+.link-nueva-espana {
+    color: var(--accent-color);
+    transition: color 0.2s ease;
+}
+
+.link-comercio:hover,
+.link-nueva-espana:hover {
+    color: var(--primary-color);
+    text-decoration: underline;
+}
+
+.contact-info i {
+    color: var(--accent-color);
+    margin-right: 10px;
+    width: 20px;
+}
+
+.contact-item {
+    margin-bottom: 1rem;
+    display: flex;
+    align-items: flex-start;
+}
+
+.project-impact {
+    margin-top: 1.5rem;
+    padding-top: 1rem;
+    border-top: 1px solid #eee;
+}
+
+.project-impact ul {
+    padding-left: 1.5rem;
+    margin-top: 0.5rem;
+}
+
+.project-impact-awards {
+    margin-top: 1.5rem;
+    padding-top: 1rem;
+    border-top: 1px solid #eee;
+}
+
+a {
+    color: var(--accent-color);
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+a:hover {
+    color: var(--primary-color);
+    text-decoration: none;
+}
+
+@media (max-width: 768px) {
+    .profile-section {
+        grid-template-columns: 1fr;
+    }
+
+    .container {
+        padding: 1rem;
+    }
+
+    .section {
+        margin: 2rem 0;
+    }
+
+    .education-item,
+    .experience-item,
+    .project-item,
+    .certification-item {
+        padding: 1.2rem;
+        margin: 1.2rem 0;
+    }
+}
